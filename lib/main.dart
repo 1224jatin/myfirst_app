@@ -24,12 +24,11 @@ class MyHome extends StatelessWidget {
   Widget build(BuildContext context){
     return Scaffold(
       body: Center(
-        child: Row(
+        child: Column(
             children: [
               const Text(" First App developed by Jatin")
             ],
           spacing: 50,
-          ma
         ),
       ),
     );
