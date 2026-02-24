@@ -22,51 +22,50 @@ class MyApp extends StatelessWidget {
 class MyHome extends StatelessWidget {
   const MyHome({super.key});
 
+  final List<String>items= const["pen","pencil", "eraser","blue Pen"];
+
+
+
 
   @override
   Widget build(BuildContext context){
     return Scaffold(
       appBar: AppBar(
         title: const Text("Flutter_appy"),
-        leading: Icon(Icons.shop_two,size: 30,color: Colors.cyan,),
+        leading: Icon(Icons.shop_two,size: 40,color: Colors.cyan,),
         backgroundColor: Colors.amberAccent,
         actions: [
           Padding(padding: EdgeInsets.symmetric(horizontal: 10,),
-          child: IconButton(onPressed:(){
+          child: Icon(Icons.search,size: 40, ))
+        ]
 
-          }, icon:Icon(Icons.search,size: 30, )))
-
-    ]
-
-          )
-      ,
+      ),
 
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center ,
           crossAxisAlignment: CrossAxisAlignment.center,
-
-          children: [
+            children: [
             Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
+                  //posts container
               Container( height: 100 ,width: 100 ,color: Colors.brown,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  const Text("POST", style: TextStyle(
+                  const Text("POSTS", style: TextStyle(
                     color: Colors.black87 , fontSize: 10
                   ),),
-              const Text("Followers", style: TextStyle(
-                  color: Colors.black87 , fontSize: 10
-              ),)
+                  const Text("25")
                 ],
               ),
             ),
+          //followers
           Container( height: 100 ,width: 100 ,color: Colors.brown ,
-            child: Row(
+            child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
@@ -78,11 +77,9 @@ class MyHome extends StatelessWidget {
             ),)
 
               ],
-
-
             ),
-          )
-                  ,
+          ),
+            //Following
             Container( height: 100 ,width: 100 ,color: Colors .brown,
           child:Column(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -108,7 +105,8 @@ class MyHome extends StatelessWidget {
                 children: [
                   const Text("About Me ! ", style: TextStyle(
                     fontSize: 20 , color: Colors.black87
-                  ),), const Text("Passinate Flutter developer with experince  ", style: TextStyle(
+                  ),),
+                  const Text("Passinate Flutter developer with experince  ", style: TextStyle(
                       fontSize: 10 , color: Colors.black
                   ),)
                 ],
@@ -125,7 +123,18 @@ class MyHome extends StatelessWidget {
                   ),)
                 ],
               ),
-            )
+            ),
+            ListView.builder(
+              itemCount: items.length,
+            itemBuilder: (context,index) {
+              return (
+                  ListTile(
+                      title: Text(items[0]),
+                    leading: Icon(Icons.looks_one_outlined),
+
+              )
+              );
+            })
 
              ]
 
