@@ -13,7 +13,8 @@ class MyApp extends StatelessWidget {
       title: "My First App",
       debugShowCheckedModeBanner: false,
       home: const MyHome()
-    );
+
+      );
 
   }
 }
@@ -21,16 +22,33 @@ class MyApp extends StatelessWidget {
 class MyHome extends StatelessWidget {
   const MyHome({super.key});
 
+
   @override
   Widget build(BuildContext context){
     return Scaffold(
+      appBar: AppBar(
+        title: const Text("Flutter_appy"),
+        leading: Icon(Icons.shop_two,size: 30,color: Colors.cyan,),
+        backgroundColor: Colors.amberAccent,
+        actions: [
+          Padding(padding: EdgeInsets.symmetric(horizontal: 10,),
+          child: IconButton(onPressed:(){
+
+          }, icon:Icon(Icons.search,size: 30, )))
+
+    ]
+
+          )
+      ,
+
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center ,
           crossAxisAlignment: CrossAxisAlignment.center,
+
           children: [
             Row(
-                mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
               Container( height: 100 ,width: 100 ,color: Colors.brown,
@@ -47,7 +65,7 @@ class MyHome extends StatelessWidget {
                 ],
               ),
             ),
-          Container( height: 100 ,width: 100 ,color: Colors.brown  ,
+          Container( height: 100 ,width: 100 ,color: Colors.brown ,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -63,7 +81,8 @@ class MyHome extends StatelessWidget {
 
 
             ),
-          ),
+          )
+                  ,
             Container( height: 100 ,width: 100 ,color: Colors .brown,
           child:Column(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -80,6 +99,7 @@ class MyHome extends StatelessWidget {
             )
 ]
             ),
+            SizedBox(height: 20,),
             Container(
               height: 200 , width: 300 , color: Colors.blueGrey,
               child: Column(
@@ -94,6 +114,7 @@ class MyHome extends StatelessWidget {
                 ],
               ),
             ),
+            SizedBox(height: 10),
             Container(
               height: 50 , width: 300 , color: Colors.blue,
               child: Column(
@@ -112,9 +133,14 @@ class MyHome extends StatelessWidget {
 
       )
     );
+
   }
 
 }
+
+
+
+
 
 
 
