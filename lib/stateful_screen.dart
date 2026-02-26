@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 
 class SecondScreen extends StatefulWidget{
@@ -31,14 +29,21 @@ class _SecondScreen extends State<SecondScreen>{
         child:
         Column(
           children: [
-            TextField(
-              controller: nameController,
-              maxLines: 1,
-              decoration: InputDecoration(
-                label: const Text("name", style: TextStyle(fontSize: 20 , color: Colors.blue),),
-                hintText: " e.g. Ram "
-              ),
-            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                TextField(
+                  controller: nameController,
+                  maxLines: 1,
+                  decoration: InputDecoration(
+                      label: const Text("name", style: TextStyle(fontSize: 20 , color: Colors.blue),),
+                      hintText: " e.g. Ram "
+                  ),
+                )
+              ],
+            )
+            ,
             TextField(
               controller: collegeController,
               maxLines: 2,
@@ -64,13 +69,15 @@ class _SecondScreen extends State<SecondScreen>{
               ),
             ),
             ElevatedButton(onPressed: (){
-              if (passwordController.value.toString()==confirmPasswordController.value.toString()){
-                buttonColor = Color(0xFFB08968);
+              if (passwordController.text==confirmPasswordController.text){
+                setState(() {
+                  buttonColor = Color(0xFFB08968);
+                });
               }
-            }, child: const Text("Submit"),
+            },
               style: ElevatedButton.styleFrom(
                 backgroundColor: buttonColor
-              ),
+              ), child: const Text("Submit"),
             )
 
           ],
