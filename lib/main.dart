@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_appy/stateful_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,7 +13,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: "My First App",
       debugShowCheckedModeBanner: false,
-      home: const MyHome()
+      home: const SecondScreen()
 
       );
 
@@ -22,7 +23,7 @@ class MyApp extends StatelessWidget {
 class MyHome extends StatelessWidget {
   const MyHome({super.key});
 
-  final List<String>items= const["pen","pencil", "eraser","blue Pen"];
+
 
 
 
@@ -38,108 +39,77 @@ class MyHome extends StatelessWidget {
           Padding(padding: EdgeInsets.symmetric(horizontal: 10,),
           child: Icon(Icons.search,size: 40, ))
         ]
-
       ),
 
       body: Center(
+
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center ,
-          crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-            Row(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment. center,
+          children: [
+            Container(height: 100,width: 300, color: Colors.blue,
+            padding: EdgeInsets.symmetric(vertical: 20,horizontal:10 ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Icon(Icons.person_rounded, size: 70, color: Colors.cyan,),
+                Column(
+                  children: [
+                    const Text("Anandita Sharma" , style: TextStyle(fontSize: 20 , color: Colors.black),),
+                    const Text("Class : 10th ", style: TextStyle(fontSize: 15 , color: Colors.black38),)
+                  ],
+                )
+              ],
+            )
+            ),
+            SizedBox(height: 10,),
+            Container( height: 50 ,width: 300 , color: Colors.white,
+              child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  //posts container
-              Container( height: 100 ,width: 100 ,color: Colors.brown,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  const Text("POSTS", style: TextStyle(
-                    color: Colors.black87 , fontSize: 10
-                  ),),
-                  const Text("25")
+                  Icon(Icons.chat_bubble_outlined ,size: 30 ,),
+                  Icon(Icons.notifications, size: 30 ,),
+                  Icon(Icons.settings,size: 30,)
                 ],
               ),
-            ),
-          //followers
-          Container( height: 100 ,width: 100 ,color: Colors.brown ,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
+               
+            )
+
+            ,
+            SizedBox(height: 10, ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                const Text("Followers", style: TextStyle(
-                    color: Colors.black87 , fontSize: 10
-                 ),),
-                const Text("1.2k", style: TextStyle(
-                color: Colors.black87 , fontSize: 10
-            ),)
+                Container(height: 30,width: 40, color: Colors.green ,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      const Text("Attendence ")
+                    ],
+                  ),
+                )
 
               ],
-            ),
-          ),
-            //Following
-            Container( height: 100 ,width: 100 ,color: Colors .brown,
-          child:Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                const Text("Followings", style: TextStyle(
-                    color: Colors.black87 , fontSize: 10
-                ),), const Text("180", style: TextStyle(
-                    color: Colors.black87 , fontSize: 10
-                ),)
-              ]
-          )
 
-            )
-]
             ),
-            SizedBox(height: 20,),
-            Container(
-              height: 200 , width: 300 , color: Colors.blueGrey,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment. center,
-                children: [
-                  const Text("About Me ! ", style: TextStyle(
-                    fontSize: 20 , color: Colors.black87
-                  ),),
-                  const Text("Passinate Flutter developer with experince  ", style: TextStyle(
-                      fontSize: 10 , color: Colors.black
-                  ),)
-                ],
-              ),
-            ),
-            SizedBox(height: 10),
-            Container(
-              height: 50 , width: 300 , color: Colors.blue,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
+            SizedBox(height: 25,width: 300,
+            child: 
+              Row(
+                mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  const Text("Follow Me ! ", style: TextStyle( fontSize: 20 , color: Colors.white
-                  ),)
+                  const Text("Subjects ", style: TextStyle(color: Colors.black, fontSize: 20  ),)
                 ],
               ),
-            ),
-            ListView.builder(
-              itemCount: items.length,
-            itemBuilder: (context,index) {
-              return (
-                  ListTile(
-                      title: Text(items[0]),
-                    leading: Icon(Icons.looks_one_outlined),
+            )
 
-              )
-              );
-            })
-
-             ]
-
-        )
-
+            
+          ],
+        ),
       )
     );
 
