@@ -29,10 +29,9 @@ class _SecondScreen extends State<SecondScreen>{
         child:
         Column(
           children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.center,
+            Expanded(child: Row(
               children: [
+                Text("Name"),
                 TextField(
                   controller: nameController,
                   maxLines: 1,
@@ -41,8 +40,12 @@ class _SecondScreen extends State<SecondScreen>{
                       hintText: " e.g. Ram "
                   ),
                 )
+
               ],
-            )
+            ))
+
+
+
             ,
             TextField(
               controller: collegeController,
@@ -72,12 +75,15 @@ class _SecondScreen extends State<SecondScreen>{
               if (passwordController.text==confirmPasswordController.text){
                 setState(() {
                   buttonColor = Color(0xFFB08968);
+                  S
+
                 });
               }
             },
               style: ElevatedButton.styleFrom(
                 backgroundColor: buttonColor
               ), child: const Text("Submit"),
+
             )
 
           ],
