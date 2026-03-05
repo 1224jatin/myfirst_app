@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_appy/main.dart';
 
 class ListviewScreen extends StatefulWidget{
   const ListviewScreen ({super.key});
@@ -9,7 +8,9 @@ class ListviewScreen extends StatefulWidget{
 
   }
   class _ListviewScreen extends State<ListviewScreen>{
-  List<String>classA=["jatin","rahul","rohit","anshu","taran","mandeep",];
+  Color buttonColor =  Color(0xFF5F372B);
+  List<String>classA=["jatin","rahul","rohit","anshu","taran","mandeep"];
+
 
 
 
@@ -25,6 +26,23 @@ class ListviewScreen extends StatefulWidget{
            mainAxisAlignment: MainAxisAlignment.start,
            crossAxisAlignment: CrossAxisAlignment.center,
            children: [
+             ElevatedButton(onPressed: (){
+               setState(() {
+                 buttonColor=Colors.purple;
+                 ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                   content: const Text("Snackbarrrrr"),
+                   duration: Duration(seconds: 3),
+                   shape: RoundedRectangleBorder(),
+                   backgroundColor: Colors.amberAccent,
+                 ));
+               });
+             },child: const Text("hi"),style: ElevatedButton.styleFrom(
+               backgroundColor: buttonColor
+             ),
+             ),
+
+
+
              Expanded(child:
              /*ListView(
                children: [
@@ -54,11 +72,17 @@ class ListviewScreen extends StatefulWidget{
                  ListTile(
                    title: Text(classA[index]),
                    tileColor: Colors.blue,
+                   leading: Icon(Icons.check_box),
+
                  ),
                );
                }
-             )
-             )
+             ),
+
+             ),
+
+
+
            ],
          ),
 

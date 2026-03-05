@@ -5,9 +5,6 @@ class SecondScreen extends StatefulWidget{
   const SecondScreen({super.key});
   @override
   State<SecondScreen> createState() => _SecondScreen();
-  
-
-  
 }
 class _SecondScreen extends State<SecondScreen>{
 
@@ -15,7 +12,7 @@ class _SecondScreen extends State<SecondScreen>{
    TextEditingController collegeController = TextEditingController();
    TextEditingController passwordController = TextEditingController();
    TextEditingController confirmPasswordController = TextEditingController();
-   Color buttonColor = const Color(0xFF5F372B);
+   Color buttonColor = Color(0xFF5F372B);
    List<String>items=["jatin ","rahul","rohit","ram","sham","anshu","taran","mandeep"];
 
 
