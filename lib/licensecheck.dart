@@ -31,7 +31,7 @@ class _Licensecheck extends State<Licensecheck>{
                   hintText: " e.g = 18 ,30 "
               )),
             ElevatedButton(onPressed: (){
-              if (int.tryParse(ageController.text.trim())!>=18 ){
+              if (int.tryParse(ageController.text.trim())! >=18 ){
                 setState(() {
                   ScaffoldMessenger.of(context).showSnackBar(SnackBar(
                     content: const Text("you are eligible"),

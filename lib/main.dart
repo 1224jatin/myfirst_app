@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_appy/gridview.dart';
 import 'package:flutter_appy/licensecheck.dart';
 import 'package:flutter_appy/listView.dart';
+import 'package:flutter_appy/loginAccount.dart';
 import 'package:flutter_appy/stateful_screen.dart';
 
 void main() {
@@ -15,7 +17,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: "My First App",
       debugShowCheckedModeBanner: false,
-      home: const Licensecheck()
+      home: LoginAccount()
 
       );
 
