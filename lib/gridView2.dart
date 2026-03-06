@@ -40,10 +40,24 @@ class _GridView2 extends State<StatefulWidget>{
                        ,
                        onTap: (){
                          ScaffoldMessenger.of(context).showSnackBar(SnackBar(content:
-                         Text("hloooo", style: TextStyle( color: Colors.lightBlue, fontSize: 15),),
-                           duration: Duration(seconds: 3),
+                         Text("on TAB", style: TextStyle( color: Colors.lightBlue, fontSize: 15),),
+                           duration: Duration(seconds: 3),backgroundColor: Colors.cyanAccent,
                          ));
                        },
+                       onDoubleTap: (){
+                         ScaffoldMessenger.of(context).showSnackBar(SnackBar(content:
+                         Text("on DOUBLE TAB", style: TextStyle( color: Colors.green, fontSize: 15),),
+                           duration: Duration(seconds: 3),backgroundColor: Colors.yellow,
+                         ));
+                       },
+                       onLongPress: (){
+                         ScaffoldMessenger.of(context).showSnackBar(SnackBar(content:
+                         Text("on long PREES", style: TextStyle( color: Colors.red, fontSize: 15),),
+                           duration: Duration(seconds: 3),backgroundColor: Colors.lightBlue,
+
+                         ));
+                       },
+
 
                      );
 
