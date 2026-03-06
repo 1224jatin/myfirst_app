@@ -6,30 +6,57 @@ class Gridview2 extends StatefulWidget{
   State<StatefulWidget> createState()=>_GridView2();
 }
 class _GridView2 extends State<StatefulWidget>{
-  List<String>profile=["POST","FOLOWERS","FOLOWING","LIKES","ADDRESS"];
+  List<String>profile=["FOLOWING","LIKES","ADDRESS"];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-       child: InkWell(
+
          child: Container(
            child: Card(
              color: Colors.black12,
              child: Column(
                mainAxisAlignment: MainAxisAlignment.center,
                crossAxisAlignment: CrossAxisAlignment.center,
-               children: [
-                 GridView(gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
-                 shrinkWrap: true,
+               children: [ GridView.builder(gridDelegate:SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
+                   shrinkWrap: true,
+                   itemCount: profile.length,
+                   itemBuilder:(context,index){
+                     return InkWell(
+                       child: Card(
+                         child:
+                         Center(
+                           child:Column(
+                             mainAxisAlignment: MainAxisAlignment.center,
+                             crossAxisAlignment: CrossAxisAlignment.center,
+                             children: [
+                               Text(profile[index], style: TextStyle(color: Colors.purple , fontSize: 15 ),)
+                             ],
+                           ),
+                         ),
+                         color: Colors.lightBlue,
+                       )
+                       ,
+                       onTap: (){
+                         ScaffoldMessenger.of(context).showSnackBar(SnackBar(content:
+                         Text("hloooo", style: TextStyle( color: Colors.lightBlue, fontSize: 15),),
+                           duration: Duration(seconds: 3),
+                         ));
+                       },
 
-                 )
+                     );
+
+
+
+                   }
+               )
 
                ],
              ),
            ),
          ),
-       ),
+
       ),
     );
   }

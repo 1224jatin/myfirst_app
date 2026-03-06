@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_appy/gridView2.dart';
 import 'package:flutter_appy/gridview.dart';
 import 'package:flutter_appy/licensecheck.dart';
 import 'package:flutter_appy/listView.dart';
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: "My First App",
       debugShowCheckedModeBanner: false,
-      home: LoginAccount()
+      home: Gridview2()
 
       );
 
