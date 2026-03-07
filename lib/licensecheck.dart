@@ -52,7 +52,14 @@ class _Licensecheck extends State<Licensecheck>{
 
               }
             }, child: const Text("submit" ,  style: TextStyle(color: Colors.black),))
+           ,
+            ElevatedButton(onPressed: (){
+              Navigator.pop(context);
+            }, child: 
+            const Text("back"))
+          
           ],
+          
 
         )
       ),

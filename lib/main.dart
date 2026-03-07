@@ -6,6 +6,8 @@ import 'package:flutter_appy/listView.dart';
 import 'package:flutter_appy/loginAccount.dart';
 import 'package:flutter_appy/stateful_screen.dart';
 
+import 'bottomNavigationScreen.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -18,7 +20,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: "My First App",
       debugShowCheckedModeBanner: false,
-      home: Gridview2()
+      home: Bottomnavigationscreen()
 
       );
 

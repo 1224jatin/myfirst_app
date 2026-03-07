@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import 'licensecheck.dart';
+
 class Gridview2 extends StatefulWidget{
   @override
   State<StatefulWidget> createState()=>_GridView2();
@@ -39,15 +41,15 @@ class _GridView2 extends State<StatefulWidget>{
                        )
                        ,
                        onTap: (){
-                         ScaffoldMessenger.of(context).showSnackBar(SnackBar(content:
-                         Text("on TAB", style: TextStyle( color: Colors.lightBlue, fontSize: 15),),
-                           duration: Duration(seconds: 3),backgroundColor: Colors.cyanAccent,
-                         ));
+                         Navigator.push(context,MaterialPageRoute(builder: (context)=>Licensecheck()));
+
                        },
                        onDoubleTap: (){
                          ScaffoldMessenger.of(context).showSnackBar(SnackBar(content:
                          Text("on DOUBLE TAB", style: TextStyle( color: Colors.green, fontSize: 15),),
-                           duration: Duration(seconds: 3),backgroundColor: Colors.yellow,
+                           duration: Duration(seconds: 3),backgroundColor: Colors.yellow
+
+                           ,
                          ));
                        },
                        onLongPress: (){
