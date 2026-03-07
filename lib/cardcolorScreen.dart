@@ -7,9 +7,10 @@ class CardcolorScreen extends StatefulWidget{
 } 
 class _CardcolorScreen extends State<CardcolorScreen> {
   List<String> cardItems =["folowers","Likes","Folowing","post","jatin"];
-  List<Colors> cardColors = [Colors.red]
 
-   late  int selectedIndex;
+
+
+   int selectedIndex = -1 ;
    
   @override
   Widget build(BuildContext context) {
@@ -21,51 +22,64 @@ class _CardcolorScreen extends State<CardcolorScreen> {
          mainAxisAlignment: MainAxisAlignment.center,
          crossAxisAlignment: CrossAxisAlignment.center,
          children: [
-           GridView.builder(gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
-               shrinkWrap: true,
-               itemCount: cardItems.length
-               , itemBuilder: (context,index){
-                 Color cardColor=Colors.red;
-             return InkWell(
+           GridView.builder(gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2,
+           crossAxisSpacing: 2,
+           mainAxisSpacing: 10),
 
-               child:  Card(
-               margin: EdgeInsets.all(10),
+               shrinkWrap: true,
+               itemCount: cardItems.length,
+                itemBuilder: (context,index){
+
+                  Color cardColor = Colors.brown;
+
+                  if(index == selectedIndex){
+                    if(index == 0 ){
+                      cardColor = Colors.green;
+                    }
+                    else if (index == 1){
+                      cardColor = Colors.pinkAccent;
+                    }
+                    else if (index == 2){
+                      cardColor= Colors.black38;
+                    }
+                    else if (index==3){
+                      cardColor = Colors.lightGreenAccent;
+                    }
+                    else if (index == 4){
+                      cardColor= Colors.greenAccent;
+                    }
+                  }
+
+             return InkWell(
+               onTap: () {
+                 setState(() {
+                   selectedIndex=index;
+                 });
+               },
+               child: Card(
+
                  color: cardColor,
-                 child: Container(
-                   padding: EdgeInsets.all(50),
-                     child:  Text(cardItems[index]),
+                 child: Center(
+                   child: Text(cardItems[index]),
+
                  ),
 
-
                ),
-               onTap: (){
-                 selectedIndex=index;
-                 if(selectedIndex==0){
-                   cardColor=Colors.green;
-                 }
-                 else if (selectedIndex==1){
-                   cardColor=Colors.pinkAccent;
-                 }
-                 else if (selectedIndex==2){
-                   cardColor=Colors.black38;
-                 }
-                 else if (selectedIndex==3){
-                   cardColor=Colors.lightGreenAccent;
-                 }
-                 else if (selectedIndex==4){
-                   cardColor=Colors.greenAccent;
-                 }
+                 );
                },
-               
-             );
-               }
-             
-           )
-         ],
-       )
-       )
-     );
-   
-  }
 
+             )
+
+
+
+
+
+         ],
+
+
+
+  )
+  )
+  );
+}
 }
