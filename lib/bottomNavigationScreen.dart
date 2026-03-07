@@ -38,6 +38,8 @@ class _Bottomnavigationscreen extends State<Bottomnavigationscreen> {
             });
         },
         backgroundColor: Colors.blue,
+        selectedItemColor: Colors.cyanAccent,
+        unselectedItemColor: Colors.lightBlue,
 
     )
     );
